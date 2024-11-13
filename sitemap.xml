@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://blog.codewater.top/resources/index.html</loc>
+    <loc>https://blog.codewater.top/tags/index.html</loc>
     
     <lastmod>2024-10-23</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://blog.codewater.top/tags/index.html</loc>
+    <loc>https://blog.codewater.top/resources/index.html</loc>
     
     <lastmod>2024-10-23</lastmod>
     
@@ -92,6 +92,20 @@
 
   
   <url>
+    <loc>https://blog.codewater.top/tags/goland/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.codewater.top/tags/remote-debug/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.codewater.top/tags/git/</loc>
     <lastmod>2024-11-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -140,24 +154,17 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://blog.codewater.top/tags/goland/</loc>
-    <lastmod>2024-11-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.codewater.top/tags/remote-debug/</loc>
-    <lastmod>2024-11-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
     <loc>https://blog.codewater.top/categories/test/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.codewater.top/categories/golang/</loc>
     <lastmod>2024-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -179,13 +186,6 @@
   
   <url>
     <loc>https://blog.codewater.top/categories/Hexo/</loc>
-    <lastmod>2024-11-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.codewater.top/categories/golang/</loc>
     <lastmod>2024-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
