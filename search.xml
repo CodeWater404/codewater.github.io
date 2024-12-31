@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>cursor: 导出聊天会话记录</title>
+      <link href="/cursor-export-ai-s-chat-records/"/>
+      <url>/cursor-export-ai-s-chat-records/</url>
+      
+        <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>自从ai出现以来，极大的提高了我的生产效率，特别是内置集成ai的<code>IDE</code>出现之后。虽然对于编码方面的提效非常<br>明显，但是对于<strong>IDE功能使用体验</strong>上来说，有些地方个人还是觉得需要改进。<br>比如，目前最火的<code>cursor</code>，内置ai，特色功能就是基于代码库的chat对话，以及行内代码提问。<br>然后，这个chat功能使用多次之后，想要<strong>记录下来这些信息</strong>，会发现很麻烦，因为目前官方<strong>不支持chat记录的导出</strong>。</p><p>在一番搜索之后，找到一些不是办法的办法。</p><span id="more"></span><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>大致思路是：</p><ol><li>写一个脚本读取<code>cursor</code>的<code>chat</code>本地的数据文件。</li><li>然后指定格式导出。</li></ol><p>我使用的这个py脚本：<a href="https://github.com/somogyijanos/cursor-chat-export">Cursor Chat Export</a>，相关<br>操作在readme中都有说明。<br>注意：</p><ul><li>这个需要安装python环境；相关依赖下载<code>pip install -r requirements.txt</code>即可。</li><li>这个脚本读取的cursor数据路径配置在<code>config.yaml</code>中，可以根据自己的需求进行修改（如果指定了路径，可以忽略）。</li><li>脚本读取的是最近的数据，所以如果想要指定某个chat的记录，需要使用到<strong>搜索功能</strong>，但是这个功能目前使用起来有点鸡肋：<ul><li>因为按照内容关键字或者chat的title搜索，没有搜到想要的结果（有点懒，没有去研究改脚本）。</li><li>在<code>Windows</code>运行，命令是：<code> D:\python\python.exe ./chat.py</code></li></ul></li></ul><p>希望官方还是尽快推出这个功能吧。</p><blockquote><p>参考资料：<br><a href="https://forum.cursor.com/t/chat-history-folder/7653/2">官方论坛相关帖子讨论1</a><br><a href="https://forum.cursor.com/t/how-do-i-export-chat-with-ai/144">官方论坛相关帖子讨论2</a><br><a href="https://github.com/somogyijanos/cursor-chat-export">相关工具</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> cursor </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> chat聊天记录导出 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>goland: 远程调试正在运行中的程序</title>
       <link href="/goland-%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E6%AD%A3%E5%9C%A8%E8%BF%90%E8%A1%8C%E4%B8%AD%E7%9A%84%E7%A8%8B%E5%BA%8F/"/>
       <url>/goland-%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E6%AD%A3%E5%9C%A8%E8%BF%90%E8%A1%8C%E4%B8%AD%E7%9A%84%E7%A8%8B%E5%BA%8F/</url>
