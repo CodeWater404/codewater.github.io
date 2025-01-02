@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.codewater.top/Git-view-the-history-of-the-specified-code-block/</loc>
+    
+    <lastmod>2025-01-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.codewater.top/cursor-export-ai-s-chat-records/</loc>
     
     <lastmod>2024-12-31</lastmod>
@@ -94,7 +103,7 @@
 
   <url>
     <loc>https://blog.codewater.top/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -102,70 +111,91 @@
   
   <url>
     <loc>https://blog.codewater.top/tags/goland/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/tags/remote-debug/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/tags/git/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/tags/linux/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/tags/ubuntu/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/tags/win/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/tags/tldr/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/tags/tools/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/tags/usage/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/tags/chat%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E5%AF%BC%E5%87%BA/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.codewater.top/tags/log/</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.codewater.top/tags/blame/</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.codewater.top/tags/history/</loc>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -174,42 +204,49 @@
   
   <url>
     <loc>https://blog.codewater.top/categories/test/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/categories/golang/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/categories/problem/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/categories/tools/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/categories/Hexo/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.codewater.top/categories/cursor/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.codewater.top/categories/git/</loc>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
