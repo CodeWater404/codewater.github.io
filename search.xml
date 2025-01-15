@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>cli中集成ai,以deepseek为例</title>
+      <link href="/cli%E4%B8%AD%E9%9B%86%E6%88%90ai-%E4%BB%A5deepseek%E4%B8%BA%E4%BE%8B/"/>
+      <url>/cli%E4%B8%AD%E9%9B%86%E6%88%90ai-%E4%BB%A5deepseek%E4%B8%BA%E4%BE%8B/</url>
+      
+        <content type="html"><![CDATA[<p>最近国内的DeepSeek爆发出强劲的势头，纵观网友们的评价下来，很少有国产AI能有这样不错的评价。再加上最近DeepSeek注册就送500百万tokens，还有1块钱一百万tokens的这样的优惠力度，不得不去体验了一下。<br><a href="https://www.deepseek.com/">deepseek官网</a></p><span id="more"></span><p><img src="/../images/2025-01-15-15-17-27.png" alt="官网公布的基准测试"><br><img src="/../images/2025-01-15-15-24-16.png" alt="模型&amp;价格"><br><img src="/../images/2025-01-15-15-25-09.png" alt="赠送的tokens"></p><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>目前来讲，我并没有很强的tokens使用场景，大多数以网页的chat聊天为主。<br>基于这种场景下的有个<strong>痛点</strong>就是：在终端和网页之间来回切换，有点浪费时间，不太友好。<br>所以我想着能不能把ai集成到cli中，让我在终端中可以直接和ai聊天，不需要切换到网页。</p><p>经过搜索，方案是可行的，工具采用的是<a href="https://github.com/simonw/llm">LLM</a>.</p><blockquote><p>在一切配置开始前，需要如下前置条件：</p><ol><li>安装python环境</li><li>注册deepseek账号</li></ol></blockquote><p>上面两个是最基本的条件，如果不满足建议谷歌搜索一下，这里不在赘述。</p><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="安装LLM"><a href="#安装LLM" class="headerlink" title="安装LLM"></a>安装LLM</h2><p>用<code>pip</code>安装:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install llm</span><br></pre></td></tr></table></figure><p>以后有需要更新版本，可以使用：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U llm</span><br></pre></td></tr></table></figure><h2 id="获取DeepSeek的API-Key"><a href="#获取DeepSeek的API-Key" class="headerlink" title="获取DeepSeek的API Key"></a>获取DeepSeek的API Key</h2><ol><li>前往<a href="https://www.deepseek.com/">deepseek官网</a>，注册一个新的账户。</li><li>在<a href="https://platform.deepseek.com/api_keys">API Keys</a>页面，点击<strong>创建 API key</strong>按钮，复制API Key，这是你的私钥，最好不要外泄。（注意：窗口一旦关闭后，API Key就会看不见，一定要保存好！当然如果没了，直接重新创建一个也可以）</li></ol><h2 id="配置LLM"><a href="#配置LLM" class="headerlink" title="配置LLM"></a>配置LLM</h2><p>由于LLM是基于OpenAI的，所以需要设置模型采用DeepSeek的模型。</p><ol><li><p>配置要使用模型的名称，这里是<code>deepseek</code>，名字随便取一个即可：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">llm keys <span class="built_in">set</span> deepseek</span><br></pre></td></tr></table></figure><p>回车之后，会提示你输入你的API Key，输入你的API Key回车即可。不确定可以采用<code>dirname &quot;$(llm logs path)&quot;</code>找到<code>keys.json</code>文件，查看里面的API Key是否正常。</p></li><li><p>配置默认使用的模型名称：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里deepseek是你第一步输入的名称</span></span><br><span class="line">llm models default deepseek</span><br></pre></td></tr></table></figure></li><li><p>配置请求<code>deepseek api</code>：</p><ul><li><code>dirname &quot;$(llm logs path)&quot;</code>，会输出llm的配置路径</li><li>在这个路径下新建一个<code>extra-openai-models.yaml</code>文件，添加如下内容:<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">model_id:</span> <span class="string">deepseek</span></span><br><span class="line">  <span class="attr">model_name:</span> <span class="string">deepseek-chat</span></span><br><span class="line">  <span class="attr">api_base:</span> <span class="string">&quot;https://api.deepseek.com/v1&quot;</span></span><br><span class="line">  <span class="attr">api_key_name:</span> <span class="string">deepseek</span></span><br></pre></td></tr></table></figure></li><li>如果你第一步的模型名称不是deepseek，这里的<code>model_id</code>和<code>api_key_name</code>需要改成第一步设置的名称。</li><li><code>model_id</code>、<code>api_key_name</code>都是LLM里面概念，而<code>model_name</code>才是请求对应厂商的模型名称</li></ul></li><li><p>如果第二步没有设置成默认模型，也可以采用参数选用模型：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">llm -m your_model_name <span class="string">&quot;你的问题&quot;</span></span><br></pre></td></tr></table></figure></li></ol><h2 id="使用验证"><a href="#使用验证" class="headerlink" title="使用验证"></a>使用验证</h2><p>终端下直接输入<code>llm &quot;你的问题&quot;</code>即可：<br><img src="/../images/2025-01-15-16-06-59.png" alt="验证api是否正常"><br>更多使用方法参考<a href="https://llm.datasette.io/en/stable/usage.html">官方文档</a></p><blockquote><p>参考：<br><a href="https://github.com/simonw/llm">https://github.com/simonw/llm</a><br><a href="https://llm.datasette.io/en/stable/setup.html">https://llm.datasette.io/en/stable/setup.html</a><br><a href="https://llm.datasette.io/en/stable/other-models.html">https://llm.datasette.io/en/stable/other-models.html</a><br><a href="https://api-docs.deepseek.com/zh-cn/">https://api-docs.deepseek.com/zh-cn/</a><br><a href="https://github.com/simonw/llm/issues/393">https://github.com/simonw/llm/issues/393</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> ai </category>
+          
+          <category> deepseek </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> api </tag>
+            
+            <tag> tokens </tag>
+            
+            <tag> cli tool </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git: submodule常见操作用法</title>
       <link href="/Git-submodule%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E7%94%A8%E6%B3%95/"/>
       <url>/Git-submodule%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E7%94%A8%E6%B3%95/</url>

@@ -22,22 +22,27 @@
   </script>
 
 
-  <meta name="description" content="背景某次工作时，在本地”dev”分支开发完，准备往本地”master”分支上合并。当我自信的敲下： 1git checkout master 然后，问题出现了。。。。 123456789101112131415161718# 这里隐藏相关文件名error: Your local changes to the following files would be overwritten by check">
+  <meta name="description" content="最近国内的DeepSeek爆发出强劲的势头，纵观网友们的评价下来，很少有国产AI能有这样不错的评价。再加上最近DeepSeek注册就送500百万tokens，还有1块钱一百万tokens的这样的优惠力度，不得不去体验了一下。deepseek官网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决Git报错fatal: bad object HEAD">
-<meta property="og:url" content="https://blog.codewater.top/%E8%A7%A3%E5%86%B3Git%E6%8A%A5%E9%94%99fatal-bad-object-HEAD/index.html">
+<meta property="og:title" content="cli中集成ai,以deepseek为例">
+<meta property="og:url" content="https://blog.codewater.top/cli%E4%B8%AD%E9%9B%86%E6%88%90ai-%E4%BB%A5deepseek%E4%B8%BA%E4%BE%8B/index.html">
 <meta property="og:site_name" content="共建代码世界，践行开源精神">
-<meta property="og:description" content="背景某次工作时，在本地”dev”分支开发完，准备往本地”master”分支上合并。当我自信的敲下： 1git checkout master 然后，问题出现了。。。。 123456789101112131415161718# 这里隐藏相关文件名error: Your local changes to the following files would be overwritten by check">
+<meta property="og:description" content="最近国内的DeepSeek爆发出强劲的势头，纵观网友们的评价下来，很少有国产AI能有这样不错的评价。再加上最近DeepSeek注册就送500百万tokens，还有1块钱一百万tokens的这样的优惠力度，不得不去体验了一下。deepseek官网">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog.codewater.top/images/git%20bad-object-head.png">
-<meta property="article:published_time" content="2024-10-24T12:13:02.000Z">
-<meta property="article:modified_time" content="2024-10-25T03:07:17.960Z">
+<meta property="og:image" content="https://blog.codewater.top/images/2025-01-15-15-17-27.png">
+<meta property="og:image" content="https://blog.codewater.top/images/2025-01-15-15-24-16.png">
+<meta property="og:image" content="https://blog.codewater.top/images/2025-01-15-15-25-09.png">
+<meta property="og:image" content="https://blog.codewater.top/images/2025-01-15-16-06-59.png">
+<meta property="article:published_time" content="2025-01-15T06:55:47.000Z">
+<meta property="article:modified_time" content="2025-01-15T08:15:57.190Z">
 <meta property="article:author" content="Code Water">
-<meta property="article:tag" content="git">
+<meta property="article:tag" content="api">
+<meta property="article:tag" content="tokens">
+<meta property="article:tag" content="cli tool">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog.codewater.top/images/git%20bad-object-head.png">
+<meta name="twitter:image" content="https://blog.codewater.top/images/2025-01-15-15-17-27.png">
 
-<link rel="canonical" href="https://blog.codewater.top/%E8%A7%A3%E5%86%B3Git%E6%8A%A5%E9%94%99fatal-bad-object-HEAD/">
+<link rel="canonical" href="https://blog.codewater.top/cli%E4%B8%AD%E9%9B%86%E6%88%90ai-%E4%BB%A5deepseek%E4%B8%BA%E4%BE%8B/">
 
 
 <script id="page-configurations">
@@ -50,7 +55,7 @@
   };
 </script>
 
-  <title>解决Git报错fatal: bad object HEAD | 共建代码世界，践行开源精神</title>
+  <title>cli中集成ai,以deepseek为例 | 共建代码世界，践行开源精神</title>
   
 
 
@@ -205,7 +210,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.codewater.top/%E8%A7%A3%E5%86%B3Git%E6%8A%A5%E9%94%99fatal-bad-object-HEAD/">
+    <link itemprop="mainEntityOfPage" href="https://blog.codewater.top/cli%E4%B8%AD%E9%9B%86%E6%88%90ai-%E4%BB%A5deepseek%E4%B8%BA%E4%BE%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -218,7 +223,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          解决Git报错fatal: bad object HEAD
+          cli中集成ai,以deepseek为例
         </h1>
 
         <div class="post-meta">
@@ -227,23 +232,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2024-10-24 20:13:02" itemprop="dateCreated datePublished" datetime="2024-10-24T20:13:02+08:00">2024-10-24</time>
+              <time title="创建时间：2025-01-15 14:55:47 / 修改时间：16:15:57" itemprop="dateCreated datePublished" datetime="2025-01-15T14:55:47+08:00">2025-01-15</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-25 11:07:17" itemprop="dateModified" datetime="2024-10-25T11:07:17+08:00">2024-10-25</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/problem/" itemprop="url" rel="index"><span itemprop="name">problem</span></a>
+                  <a href="/categories/ai/" itemprop="url" rel="index"><span itemprop="name">ai</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ai/deepseek/" itemprop="url" rel="index"><span itemprop="name">deepseek</span></a>
                 </span>
             </span>
 
@@ -265,49 +268,53 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>某次工作时，在本地”dev”分支开发完，准备往本地”master”分支上合并。当我自信的敲下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
-<p>然后，问题出现了。。。。</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里隐藏相关文件名</span></span><br><span class="line"></span><br><span class="line">error: Your <span class="built_in">local</span> changes <span class="built_in">to</span> <span class="keyword">the</span> following <span class="built_in">files</span> would be overwritten <span class="keyword">by</span> checkout:</span><br><span class="line">        **<span class="comment">/*.go</span></span><br><span class="line"><span class="comment">        **/</span>*.sh</span><br><span class="line">        **/</span><br><span class="line">        ...</span><br><span class="line">Please commit your changes <span class="keyword">or</span> stash them <span class="keyword">before</span> you <span class="keyword">switch</span> branches.</span><br><span class="line">Aborting</span><br><span class="line"></span><br><span class="line"><span class="comment"># 中间有个交互，问我是否继续，我当时由于看到这一堆报错，就没看前面的信息，按下了“n”</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 然后再敲git命令时，就报了这个错,且大部分操作仓库的命令都无法使用。。。。</span></span><br><span class="line"> git status</span><br><span class="line">        fatal: bad object HEAD  </span><br><span class="line"></span><br><span class="line"> git <span class="built_in">log</span></span><br><span class="line">        fatal: bad object HEAD  </span><br></pre></td></tr></table></figure>
-
+        <p>最近国内的DeepSeek爆发出强劲的势头，纵观网友们的评价下来，很少有国产AI能有这样不错的评价。再加上最近DeepSeek注册就送500百万tokens，还有1块钱一百万tokens的这样的优惠力度，不得不去体验了一下。<br><a target="_blank" rel="noopener" href="https://www.deepseek.com/">deepseek官网</a></p>
 <span id="more"></span>
 
-
-
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><h2 id="方法一：-删除-git文件夹"><a href="#方法一：-删除-git文件夹" class="headerlink" title="方法一： 删除.git文件夹"></a>方法一： 删除.git文件夹</h2><p><code>fatal: bad object HEAD</code>这个报错从表面意思来看就是一个错误的head对象，经过查资料之后，原因也大差不差，就是从head引用的分支指向了错误的提交对象。<br>至于为什么会在切分支的时候会引发这个错误，由于暂时没办法复现，无法深究。</p>
-<p>在知道报错信息之后，查找解决方法，但是大部分的方案都是需要：</p>
-<ol>
-<li><font color="red">删除<code>.git</code>文件夹,重新init一个仓库。</font></li>
-<li>或者直接回滚到远程分支所在的commit。</li>
-</ol>
+<p><img src="/../images/2025-01-15-15-17-27.png" alt="官网公布的基准测试"><br><img src="/../images/2025-01-15-15-24-16.png" alt="模型&amp;价格"><br><img src="/../images/2025-01-15-15-25-09.png" alt="赠送的tokens"></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>目前来讲，我并没有很强的tokens使用场景，大多数以网页的chat聊天为主。<br>基于这种场景下的有个<strong>痛点</strong>就是：在终端和网页之间来回切换，有点浪费时间，不太友好。<br>所以我想着能不能把ai集成到cli中，让我在终端中可以直接和ai聊天，不需要切换到网页。</p>
+<p>经过搜索，方案是可行的，工具采用的是<a target="_blank" rel="noopener" href="https://github.com/simonw/llm">LLM</a>.</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/20264032/git-status-shows-fatal-bad-object-head">参考1</a> <br><a target="_blank" rel="noopener" href="https://panjeh.medium.com/git-status-fatal-bad-object-head-af22724f48b9">参考2</a> <br><a target="_blank" rel="noopener" href="https://www.swyx.io/solve-git-bad-object-head">参考3</a> <br>其余不在列出。。。。</p>
-</blockquote>
-<h2 id="方法二：-回滚-恢复（推荐）"><a href="#方法二：-回滚-恢复（推荐）" class="headerlink" title="方法二： 回滚+恢复（推荐）"></a>方法二： 回滚+恢复（推荐）</h2><blockquote>
-<p>如果本地有未提交的commit，那么方法一是不适合的。因为相当于几天的工作白干了，而且大量的记录都丢失了。</p>
-</blockquote>
-<blockquote>
-<p>在既需要保存本地未push的commit，又需要修复git仓库这种情况下，找了很多资料，没有找到想要的解决方案。</p>
-<p>最终，和涛哥（一位不愿透露姓名的大佬）的讨论之下，给了一个提示：想办法回滚到事故前的commit，然后利用reflog+cherry-pick恢复。</p>
-</blockquote>
-<p>探索之下，详细操作如下：</p>
+<p>在一切配置开始前，需要如下前置条件：</p>
 <ol>
-<li>假设本地仓库<code>example</code> ,先备份一下本地仓库<code>tmp</code>，防止误操作导致的后果</li>
-<li>在a仓库操作：<ol>
-<li>回滚到和远程分支一样的状态： <code>git reset --hard origin/dev</code></li>
-<li>到这里，example库已经修复好了，测试git命令： <code>git log</code> ；但是本地未提交的commit还需要恢复！</li>
-<li>利用<code>reflog</code>查看本地未push的是哪几个commit： <code>git reflog</code>。假设有这个几个commit： <code>... =&gt; a =&gt; b =&gt; c =&gt; d =&gt;...</code> ，bc是本地未提交的commitId，a是回滚后所在的位置,d是别的操作产生的commitid。</li>
-<li>恢复： <code>git cherry-pick a..c</code>。 因为<code>cherry-pick</code>不采用第一个开始的commit，所以从a开始，d不是我们想要恢复的commit，所以不包含。</li>
-<li>如果有报错很正常，是冲突，解决一下对应的文件即可。<ol>
-<li>解决完冲突之后：<code>git add 相关文件</code> ,</li>
-<li>接着 <code>git cherry-pick --continue</code>即可。</li>
+<li>安装python环境</li>
+<li>注册deepseek账号</li>
 </ol>
+</blockquote>
+<p>上面两个是最基本的条件，如果不满足建议谷歌搜索一下，这里不在赘述。</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="安装LLM"><a href="#安装LLM" class="headerlink" title="安装LLM"></a>安装LLM</h2><p>用<code>pip</code>安装:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install llm</span><br></pre></td></tr></table></figure>
+
+<p>以后有需要更新版本，可以使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U llm</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取DeepSeek的API-Key"><a href="#获取DeepSeek的API-Key" class="headerlink" title="获取DeepSeek的API Key"></a>获取DeepSeek的API Key</h2><ol>
+<li>前往<a target="_blank" rel="noopener" href="https://www.deepseek.com/">deepseek官网</a>，注册一个新的账户。</li>
+<li>在<a target="_blank" rel="noopener" href="https://platform.deepseek.com/api_keys">API Keys</a>页面，点击<strong>创建 API key</strong>按钮，复制API Key，这是你的私钥，最好不要外泄。（注意：窗口一旦关闭后，API Key就会看不见，一定要保存好！当然如果没了，直接重新创建一个也可以）</li>
+</ol>
+<h2 id="配置LLM"><a href="#配置LLM" class="headerlink" title="配置LLM"></a>配置LLM</h2><p>由于LLM是基于OpenAI的，所以需要设置模型采用DeepSeek的模型。</p>
+<ol>
+<li><p>配置要使用模型的名称，这里是<code>deepseek</code>，名字随便取一个即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">llm keys <span class="built_in">set</span> deepseek</span><br></pre></td></tr></table></figure>
+<p>回车之后，会提示你输入你的API Key，输入你的API Key回车即可。不确定可以采用<code>dirname &quot;$(llm logs path)&quot;</code>找到<code>keys.json</code>文件，查看里面的API Key是否正常。</p>
 </li>
-</ol>
+<li><p>配置默认使用的模型名称：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里deepseek是你第一步输入的名称</span></span><br><span class="line">llm models default deepseek</span><br></pre></td></tr></table></figure></li>
+<li><p>配置请求<code>deepseek api</code>：</p>
+<ul>
+<li><code>dirname &quot;$(llm logs path)&quot;</code>，会输出llm的配置路径</li>
+<li>在这个路径下新建一个<code>extra-openai-models.yaml</code>文件，添加如下内容:<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">model_id:</span> <span class="string">deepseek</span></span><br><span class="line">  <span class="attr">model_name:</span> <span class="string">deepseek-chat</span></span><br><span class="line">  <span class="attr">api_base:</span> <span class="string">&quot;https://api.deepseek.com/v1&quot;</span></span><br><span class="line">  <span class="attr">api_key_name:</span> <span class="string">deepseek</span></span><br></pre></td></tr></table></figure></li>
+<li>如果你第一步的模型名称不是deepseek，这里的<code>model_id</code>和<code>api_key_name</code>需要改成第一步设置的名称。</li>
+<li><code>model_id</code>、<code>api_key_name</code>都是LLM里面概念，而<code>model_name</code>才是请求对应厂商的模型名称</li>
+</ul>
 </li>
-<li>上述步骤操作完之后，如果对于之前恢复的commit不放心是不是有错误的代码，或者根本没回复，可以采用这个命令对比： <code>git diff --no-index -- .\example\ .\tmp\</code> 。tmp就是之前还未修复的原始库备份。</li>
+<li><p>如果第二步没有设置成默认模型，也可以采用参数选用模型：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">llm -m your_model_name <span class="string">&quot;你的问题&quot;</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<p><img src="/../images/git%20bad-object-head.png" alt="操作图解"></p>
+<h2 id="使用验证"><a href="#使用验证" class="headerlink" title="使用验证"></a>使用验证</h2><p>终端下直接输入<code>llm &quot;你的问题&quot;</code>即可：<br><img src="/../images/2025-01-15-16-06-59.png" alt="验证api是否正常"><br>更多使用方法参考<a target="_blank" rel="noopener" href="https://llm.datasette.io/en/stable/usage.html">官方文档</a></p>
+<blockquote>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://github.com/simonw/llm">https://github.com/simonw/llm</a><br><a target="_blank" rel="noopener" href="https://llm.datasette.io/en/stable/setup.html">https://llm.datasette.io/en/stable/setup.html</a><br><a target="_blank" rel="noopener" href="https://llm.datasette.io/en/stable/other-models.html">https://llm.datasette.io/en/stable/other-models.html</a><br><a target="_blank" rel="noopener" href="https://api-docs.deepseek.com/zh-cn/">https://api-docs.deepseek.com/zh-cn/</a><br><a target="_blank" rel="noopener" href="https://github.com/simonw/llm/issues/393">https://github.com/simonw/llm/issues/393</a></p>
+</blockquote>
 
     </div>
 
@@ -323,7 +330,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.codewater.top/%E8%A7%A3%E5%86%B3Git%E6%8A%A5%E9%94%99fatal-bad-object-HEAD/" title="解决Git报错fatal: bad object HEAD">https://blog.codewater.top/解决Git报错fatal-bad-object-HEAD/</a>
+    <a href="https://blog.codewater.top/cli%E4%B8%AD%E9%9B%86%E6%88%90ai-%E4%BB%A5deepseek%E4%B8%BA%E4%BE%8B/" title="cli中集成ai,以deepseek为例">https://blog.codewater.top/cli中集成ai-以deepseek为例/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -344,7 +351,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/git/" rel="tag"># git</a>
+              <a href="/tags/api/" rel="tag"># api</a>
+              <a href="/tags/tokens/" rel="tag"># tokens</a>
+              <a href="/tags/cli-tool/" rel="tag"># cli tool</a>
           </div>
 
         
@@ -353,13 +362,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/tldr/" rel="prev" title="tldr：一款命令使用提示工具">
-      <i class="fa fa-chevron-left"></i> tldr：一款命令使用提示工具
+    <a href="/Git-submodule%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E7%94%A8%E6%B3%95/" rel="prev" title="Git: submodule常见操作用法">
+      <i class="fa fa-chevron-left"></i> Git: submodule常见操作用法
     </a></div>
-      <div class="post-nav-item">
-    <a href="/goland-%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E6%AD%A3%E5%9C%A8%E8%BF%90%E8%A1%8C%E4%B8%AD%E7%9A%84%E7%A8%8B%E5%BA%8F/" rel="next" title="goland: 远程调试正在运行中的程序">
-      goland: 远程调试正在运行中的程序 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -419,7 +425,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3"><span class="nav-text">解决</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A-%E5%88%A0%E9%99%A4-git%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-text">方法一： 删除.git文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A-%E5%9B%9E%E6%BB%9A-%E6%81%A2%E5%A4%8D%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="nav-text">方法二： 回滚+恢复（推荐）</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85LLM"><span class="nav-text">安装LLM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96DeepSeek%E7%9A%84API-Key"><span class="nav-text">获取DeepSeek的API Key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AELLM"><span class="nav-text">配置LLM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%AA%8C%E8%AF%81"><span class="nav-text">使用验证</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -610,7 +616,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'codewater404.github.io',
       owner       : 'CodeWater404',
       admin       : ['CodeWater404'],
-      id          : '78b9a9f1a2d1bc465c1d282951749b33',
+      id          : 'c06116c5d865cb9acc626a15f3a7532b',
         language: '',
       distractionFreeMode: true
     });
